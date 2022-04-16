@@ -1,0 +1,660 @@
+nohup: ignoring input
+Some weights of the model checkpoint at xlm-roberta-base were not used when initializing XLMRobertaModel: ['lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.bias', 'lm_head.layer_norm.bias']
+- This IS expected if you are initializing XLMRobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+environment  terminal
+Namespace(Batchsize=16, GCNEmbedDim=0, GCNLayerNum=0, GCNModelMode=3, LearningRate=4e-05, NEREmbedDim=0, POSEmbedDim=0, PretrainModel=None, RecordsDir='RecordsDir', Source='spanish', Task='ATESP', TrainEpochs=20)
+
+Get 2070 sentence from /root/GCNXLMRLanguageATE/Dataset/SemEval_2016_Task5/Restaurant_Train_Subtask1/restaurants_train_spanish_subtask1.xml 
+The first data is ('Nos sentimos muy a gusto.', [], 'Train', 'spanish', 'Restaurant', 'es_9reinas_10_JordiCollGranell_2014-09-21', 'es_9reinas_10_JordiCollGranell_2014-09-21:0')
+
+Get 676 sentence from /root/GCNXLMRLanguageATE/Dataset/SemEval_2016_Task5/Restaurant_Test_Subtask1/restaurants_test_english_subtask1.xml 
+The first data is ('Yum!', [], 'Test', 'english', 'Restaurant', 'en_BlueRibbonSushi_478218171', 'en_BlueRibbonSushi_478218171:0')
+
+Get 881 sentence from /root/GCNXLMRLanguageATE/Dataset/SemEval_2016_Task5/Restaurant_Test_Subtask1/restaurants_test_spanish_subtask1.xml 
+The first data is ('La comida estuvo muy sabrosa.', [Target:comida | C:FOOD#QUALITY | P:positive | Begin:3 | End:9], 'Test', 'spanish', 'Restaurant', 'es_9reinas_0_MonicaNavarroOlive_2015-04-19', 'es_9reinas_0_MonicaNavarroOlive_2015-04-19:0')
+
+Get 668 sentence from /root/GCNXLMRLanguageATE/Dataset/SemEval_2016_Task5/Restaurant_Test_Subtask1/restaurants_test_french_subtask1.xml 
+The first data is ('Après le palais du facteur nous voici à la halte qui est un restaurant correct.', [Target:restaurant | C:RESTAURANT#GENERAL | P:neutral | Begin:60 | End:70], 'Test', 'french', 'Restaurant', 'g1368199-d3726982-r258755756', 'g1368199-d3726982-r258755756:0')
+load xlm-roberta-base tokenizer success
+****************************************          0          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 88%|████████▊ | 103/117 [00:20<00:02,  5.13it/s]100%|██████████| 117/117 [00:23<00:00,  5.07it/s]
+F1:0.08674 Pre:0.24185 Recall:0.05285 - 89/368/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 13.73it/s]
+F1:0.52173 Pre:0.49741 Recall:0.54857 - 96/193/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 15.41it/s]
+F1:0.43206 Pre:0.44677 Recall:0.4183 - 256/573/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 15.77it/s]
+F1:0.5409 Pre:0.52219 Recall:0.56101 - 400/766/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 14.81it/s]
+F1:0.4704 Pre:0.49 Recall:0.45231 - 294/600/650 = trueNum/allNum/extractNum
+best iter is  0
+train:  F1:0.08674 Pre:0.24185 Recall:0.05285 - 89/368/1684 = trueNum/allNum/extractNum
+trial:  F1:0.52173 Pre:0.49741 Recall:0.54857 - 96/193/175 = trueNum/allNum/extractNum
+testEn: F1:0.43206 Pre:0.44677 Recall:0.4183 - 256/573/612 = trueNum/allNum/extractNum
+testEs: F1:0.5409 Pre:0.52219 Recall:0.56101 - 400/766/713 = trueNum/allNum/extractNum
+testFr: F1:0.4704 Pre:0.49 Recall:0.45231 - 294/600/650 = trueNum/allNum/extractNum
+****************************************          1          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 83%|████████▎ | 97/117 [00:20<00:04,  4.82it/s]100%|██████████| 117/117 [00:24<00:00,  4.72it/s]
+F1:0.6423 Pre:0.78657 Recall:0.54276 - 914/1162/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 10.05it/s]
+F1:0.69629 Pre:0.61304 Recall:0.80571 - 141/230/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 14.43it/s]
+F1:0.57861 Pre:0.55758 Recall:0.60131 - 368/660/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.10it/s]
+F1:0.71919 Pre:0.64898 Recall:0.80645 - 575/886/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 12.30it/s]
+F1:0.66085 Pre:0.62586 Recall:0.7 - 455/727/650 = trueNum/allNum/extractNum
+best iter is  1
+train:  F1:0.6423 Pre:0.78657 Recall:0.54276 - 914/1162/1684 = trueNum/allNum/extractNum
+trial:  F1:0.69629 Pre:0.61304 Recall:0.80571 - 141/230/175 = trueNum/allNum/extractNum
+testEn: F1:0.57861 Pre:0.55758 Recall:0.60131 - 368/660/612 = trueNum/allNum/extractNum
+testEs: F1:0.71919 Pre:0.64898 Recall:0.80645 - 575/886/713 = trueNum/allNum/extractNum
+testFr: F1:0.66085 Pre:0.62586 Recall:0.7 - 455/727/650 = trueNum/allNum/extractNum
+****************************************          2          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 85%|████████▍ | 99/117 [00:20<00:03,  4.91it/s]100%|██████████| 117/117 [00:23<00:00,  4.93it/s]
+F1:0.72267 Pre:0.79628 Recall:0.66152 - 1114/1399/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.78it/s]
+F1:0.72584 Pre:0.66827 Recall:0.79429 - 139/208/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 17.60it/s]
+F1:0.65529 Pre:0.68571 Recall:0.62745 - 384/560/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 14.97it/s]
+F1:0.74708 Pre:0.73056 Recall:0.76438 - 545/746/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.11it/s]
+F1:0.67809 Pre:0.6872 Recall:0.66923 - 435/633/650 = trueNum/allNum/extractNum
+best iter is  2
+train:  F1:0.72267 Pre:0.79628 Recall:0.66152 - 1114/1399/1684 = trueNum/allNum/extractNum
+trial:  F1:0.72584 Pre:0.66827 Recall:0.79429 - 139/208/175 = trueNum/allNum/extractNum
+testEn: F1:0.65529 Pre:0.68571 Recall:0.62745 - 384/560/612 = trueNum/allNum/extractNum
+testEs: F1:0.74708 Pre:0.73056 Recall:0.76438 - 545/746/713 = trueNum/allNum/extractNum
+testFr: F1:0.67809 Pre:0.6872 Recall:0.66923 - 435/633/650 = trueNum/allNum/extractNum
+****************************************          3          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 93%|█████████▎| 109/117 [00:20<00:01,  5.38it/s]100%|██████████| 117/117 [00:22<00:00,  5.31it/s]
+F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 10.50it/s]
+F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 14.19it/s]
+F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 12.73it/s]
+F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 12.66it/s]
+F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          4          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 79%|███████▊  | 92/117 [00:20<00:05,  4.55it/s]100%|██████████| 117/117 [00:25<00:00,  4.53it/s]
+F1:0.82547 Pre:0.85209 Recall:0.80048 - 1348/1582/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.10it/s]
+F1:0.71469 Pre:0.72093 Recall:0.70857 - 124/172/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 12.29it/s]
+F1:0.66352 Pre:0.78396 Recall:0.57516 - 352/449/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 12.42it/s]
+F1:0.7573 Pre:0.79084 Recall:0.72651 - 518/655/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.24it/s]
+F1:0.64527 Pre:0.71536 Recall:0.58769 - 382/534/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          5          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 90%|████████▉ | 105/117 [00:20<00:02,  5.23it/s]100%|██████████| 117/117 [00:22<00:00,  5.20it/s]
+F1:0.87345 Pre:0.88875 Recall:0.85867 - 1446/1627/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 13.63it/s]
+F1:0.70312 Pre:0.64593 Recall:0.77143 - 135/209/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 15.24it/s]
+F1:0.63545 Pre:0.65068 Recall:0.62092 - 380/584/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 16.09it/s]
+F1:0.75507 Pre:0.72941 Recall:0.78261 - 558/765/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 14.20it/s]
+F1:0.68614 Pre:0.66861 Recall:0.70462 - 458/685/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          6          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 86%|████████▋ | 101/117 [00:20<00:03,  5.03it/s]100%|██████████| 117/117 [00:23<00:00,  4.89it/s]
+F1:0.90003 Pre:0.91014 Recall:0.89014 - 1499/1647/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 10.85it/s]
+F1:0.72676 Pre:0.71667 Recall:0.73714 - 129/180/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 13.42it/s]
+F1:0.68169 Pre:0.80132 Recall:0.59314 - 363/453/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 12.07it/s]
+F1:0.75233 Pre:0.77059 Recall:0.73492 - 524/680/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 13.56it/s]
+F1:0.66897 Pre:0.76331 Recall:0.59538 - 387/507/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          7          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 81%|████████  | 95/117 [00:20<00:04,  4.74it/s]100%|██████████| 117/117 [00:25<00:00,  4.62it/s]
+F1:0.92041 Pre:0.924 Recall:0.91686 - 1544/1671/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.06it/s]
+F1:0.72131 Pre:0.6911 Recall:0.75429 - 132/191/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 13.11it/s]
+F1:0.67993 Pre:0.69024 Recall:0.66993 - 410/594/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.80it/s]
+F1:0.75528 Pre:0.73475 Recall:0.777 - 554/754/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 13.54it/s]
+F1:0.70606 Pre:0.69552 Recall:0.71692 - 466/670/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          8          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 91%|█████████▏| 107/117 [00:20<00:01,  5.33it/s]100%|██████████| 117/117 [00:22<00:00,  5.31it/s]
+F1:0.9494 Pre:0.95167 Recall:0.94715 - 1595/1676/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 13.56it/s]
+F1:0.71348 Pre:0.70166 Recall:0.72571 - 127/181/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 14.31it/s]
+F1:0.69948 Pre:0.74176 Recall:0.66176 - 405/546/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.79it/s]
+F1:0.76197 Pre:0.77697 Recall:0.74755 - 533/686/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.04it/s]
+F1:0.68525 Pre:0.71074 Recall:0.66154 - 430/605/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          9          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 96%|█████████▌| 112/117 [00:20<00:00,  5.58it/s]100%|██████████| 117/117 [00:20<00:00,  5.59it/s]
+F1:0.96333 Pre:0.96709 Recall:0.95962 - 1616/1671/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.16it/s]
+F1:0.7191 Pre:0.70718 Recall:0.73143 - 128/181/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 21.37it/s]
+F1:0.68502 Pre:0.72364 Recall:0.65033 - 398/550/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 17.49it/s]
+F1:0.75477 Pre:0.76068 Recall:0.74895 - 534/702/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 18.86it/s]
+F1:0.69655 Pre:0.72621 Recall:0.66923 - 435/599/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          10          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 98%|█████████▊| 115/117 [00:20<00:00,  5.71it/s]100%|██████████| 117/117 [00:20<00:00,  5.72it/s]
+F1:0.96271 Pre:0.96705 Recall:0.95843 - 1614/1669/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 15.48it/s]
+F1:0.72727 Pre:0.72316 Recall:0.73143 - 128/177/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 20.79it/s]
+F1:0.66138 Pre:0.71619 Recall:0.61438 - 376/525/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 16.18it/s]
+F1:0.76048 Pre:0.77089 Recall:0.75035 - 535/694/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 18.38it/s]
+F1:0.69341 Pre:0.72483 Recall:0.66462 - 432/596/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          11          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 79%|███████▉  | 93/117 [00:20<00:05,  4.63it/s]100%|██████████| 117/117 [00:25<00:00,  4.52it/s]
+F1:0.96386 Pre:0.96937 Recall:0.95843 - 1614/1665/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.95it/s]
+F1:0.71022 Pre:0.70621 Recall:0.71429 - 125/177/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 11.84it/s]
+F1:0.68321 Pre:0.71763 Recall:0.65196 - 399/556/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.45it/s]
+F1:0.75437 Pre:0.75279 Recall:0.75596 - 539/716/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 11.88it/s]
+F1:0.69099 Pre:0.69749 Recall:0.68462 - 445/638/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          12          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 79%|███████▊  | 92/117 [00:20<00:05,  4.58it/s]100%|██████████| 117/117 [00:25<00:00,  4.56it/s]
+F1:0.97531 Pre:0.97677 Recall:0.97387 - 1640/1679/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 13.19it/s]
+F1:0.71839 Pre:0.72254 Recall:0.71429 - 125/173/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 15.00it/s]
+F1:0.71978 Pre:0.77547 Recall:0.67157 - 411/530/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 16.26it/s]
+F1:0.76669 Pre:0.78529 Recall:0.74895 - 534/680/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 13.13it/s]
+F1:0.68908 Pre:0.73814 Recall:0.64615 - 420/569/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          13          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 90%|████████▉ | 105/117 [00:20<00:02,  5.23it/s]100%|██████████| 117/117 [00:22<00:00,  5.20it/s]
+F1:0.97413 Pre:0.97558 Recall:0.97268 - 1638/1679/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 13.68it/s]
+F1:0.71751 Pre:0.7095 Recall:0.72571 - 127/179/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 13.99it/s]
+F1:0.72084 Pre:0.78462 Recall:0.66667 - 408/520/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 16.07it/s]
+F1:0.76169 Pre:0.78254 Recall:0.74194 - 529/676/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 14.60it/s]
+F1:0.66556 Pre:0.72043 Recall:0.61846 - 402/558/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          14          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 79%|███████▉  | 93/117 [00:20<00:05,  4.59it/s]100%|██████████| 117/117 [00:25<00:00,  4.52it/s]
+F1:0.9828 Pre:0.98107 Recall:0.98456 - 1658/1690/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.48it/s]
+F1:0.72625 Pre:0.71038 Recall:0.74286 - 130/183/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 12.20it/s]
+F1:0.71564 Pre:0.75963 Recall:0.67647 - 414/545/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.35it/s]
+F1:0.7566 Pre:0.77035 Recall:0.74334 - 530/688/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 13.22it/s]
+F1:0.70607 Pre:0.73422 Recall:0.68 - 442/602/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          15          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 79%|███████▊  | 92/117 [00:20<00:05,  4.55it/s]100%|██████████| 117/117 [00:26<00:00,  4.48it/s]
+F1:0.97798 Pre:0.97974 Recall:0.97625 - 1644/1678/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 11.45it/s]
+F1:0.73563 Pre:0.73988 Recall:0.73143 - 128/173/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 16.67it/s]
+F1:0.7095 Pre:0.76908 Recall:0.6585 - 403/524/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 14.54it/s]
+F1:0.76911 Pre:0.79198 Recall:0.74755 - 533/673/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.94it/s]
+F1:0.7014 Pre:0.7585 Recall:0.65231 - 424/559/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          16          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 91%|█████████ | 106/117 [00:20<00:02,  5.27it/s]100%|██████████| 117/117 [00:22<00:00,  5.23it/s]
+F1:0.986 Pre:0.98866 Recall:0.98337 - 1656/1675/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:00<00:00, 14.66it/s]
+F1:0.71999 Pre:0.675 Recall:0.77143 - 135/200/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 14.47it/s]
+F1:0.71571 Pre:0.73288 Recall:0.69935 - 428/584/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:03<00:00, 15.41it/s]
+F1:0.76933 Pre:0.73902 Recall:0.80224 - 572/774/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.69it/s]
+F1:0.71148 Pre:0.69881 Recall:0.72462 - 471/674/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          17          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 85%|████████▍ | 99/117 [00:20<00:03,  4.92it/s]100%|██████████| 117/117 [00:24<00:00,  4.79it/s]
+F1:0.9816 Pre:0.98102 Recall:0.98219 - 1654/1686/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 12.00it/s]
+F1:0.72829 Pre:0.71429 Recall:0.74286 - 130/182/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:03<00:00, 12.15it/s]
+F1:0.72006 Pre:0.76138 Recall:0.68301 - 418/549/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.38it/s]
+F1:0.76516 Pre:0.77907 Recall:0.75175 - 536/688/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:03<00:00, 11.82it/s]
+F1:0.70113 Pre:0.7381 Recall:0.66769 - 434/588/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          18          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 80%|████████  | 94/117 [00:20<00:04,  4.70it/s]100%|██████████| 117/117 [00:25<00:00,  4.55it/s]
+F1:0.98991 Pre:0.98874 Recall:0.99109 - 1669/1688/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00, 12.23it/s]
+F1:0.72022 Pre:0.69892 Recall:0.74286 - 130/186/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 14.68it/s]
+F1:0.69957 Pre:0.73002 Recall:0.67157 - 411/563/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.44it/s]
+F1:0.76197 Pre:0.76521 Recall:0.75877 - 541/707/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.09it/s]
+F1:0.70094 Pre:0.7215 Recall:0.68154 - 443/614/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
+****************************************          19          ****************************************
+
+++++++++++++++++++++                    train                    ++++++++++++++++++++
+
+  0%|          | 0/117 [00:00<?, ?it/s] 91%|█████████ | 106/117 [00:20<00:02,  5.25it/s]100%|██████████| 117/117 [00:22<00:00,  5.21it/s]
+F1:0.98873 Pre:0.98756 Recall:0.9899 - 1667/1688/1684 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    trial                    ++++++++++++++++++++
+
+  0%|          | 0/13 [00:00<?, ?it/s]100%|██████████| 13/13 [00:01<00:00,  8.26it/s]
+F1:0.69587 Pre:0.6338 Recall:0.77143 - 135/213/175 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEn                    ++++++++++++++++++++
+
+  0%|          | 0/43 [00:00<?, ?it/s]100%|██████████| 43/43 [00:02<00:00, 16.91it/s]
+F1:0.70607 Pre:0.69062 Recall:0.72222 - 442/640/612 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testEs                    ++++++++++++++++++++
+
+  0%|          | 0/56 [00:00<?, ?it/s]100%|██████████| 56/56 [00:04<00:00, 13.81it/s]
+F1:0.74793 Pre:0.68329 Recall:0.82609 - 589/862/713 = trueNum/allNum/extractNum
+
+++++++++++++++++++++                    testFr                    ++++++++++++++++++++
+
+  0%|          | 0/42 [00:00<?, ?it/s]100%|██████████| 42/42 [00:02<00:00, 15.32it/s]
+F1:0.69361 Pre:0.64342 Recall:0.75231 - 489/760/650 = trueNum/allNum/extractNum
+best iter is  3
+train:  F1:0.78589 Pre:0.83646 Recall:0.74109 - 1248/1492/1684 = trueNum/allNum/extractNum
+trial:  F1:0.75449 Pre:0.79245 Recall:0.72 - 126/159/175 = trueNum/allNum/extractNum
+testEn: F1:0.62641 Pre:0.74107 Recall:0.54248 - 332/448/612 = trueNum/allNum/extractNum
+testEs: F1:0.76233 Pre:0.816 Recall:0.71529 - 510/625/713 = trueNum/allNum/extractNum
+testFr: F1:0.65643 Pre:0.73614 Recall:0.59231 - 385/523/650 = trueNum/allNum/extractNum
