@@ -1,4 +1,6 @@
-# BSGLE
+# LABSGCN
+
+paper "A Language-Agnostic Framework with Bidirectional Syntactic Graph Convolutional Networks for Cross-Lingual Aspect Term Extraction"
 
 Modelling Grammatical and Lexical features for Cross-lingual Aspect Term Extraction
 
