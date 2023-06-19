@@ -28,3 +28,9 @@ SCONJ: subordinating conjunction
 SYM: symbol
 VERB: verb
 X: other
+
+
+----
+torch2.0,cuda11.7环境
+pyg环境 https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html
+
